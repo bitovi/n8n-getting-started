@@ -1,0 +1,1 @@
+use dash case for the file names (e.g., my-file-name.md).

@@ -1,0 +1,8 @@
+.env-langfuse
+.env-n8n
+.env-pg-langfuse
+.env-pg-n8n
+
+.DS_Store
+.n8n
+.cache
