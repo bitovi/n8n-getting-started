@@ -129,6 +129,14 @@ services:
     volumes:
       - qdrant_data:/qdrant/storage
 
+# system metrics exporter thingie
+  node-exporter:
+    image: prom/node-exporter
+    container_name: node-exporter
+    ports:
+      - 9100:9100
+    restart: unless-stopped
+
 configs:
   qdrant_config:
     content: |
