@@ -1,0 +1,34 @@
+# N8N-Getting-Started: Prometheus
+This example shows how to add an **Prometheus service** to your local N8N deployment using docker-compose.
+
+### Step 1. Update the docker-compose.yml
+
+```yaml
+services:
+  ...
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: always
+    container_name: qdrant
+    ports:
+      - 6333:6333
+      - 6334:6334
+    expose:
+      - 6333
+      - 6334
+      - 6335
+    configs:
+      - source: qdrant_config
+        target: /qdrant/config/production.yaml
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+configs:
+  qdrant_config:
+    content: |
+      log_level: INFO 
+
+volumes:
+  ...
+  qdrant_data:
+```
