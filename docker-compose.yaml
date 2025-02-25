@@ -12,6 +12,3 @@ services:
       - N8N_METRICS=true
     volumes:
       - .:/home/node
-      - ./mount_files:/mount_files
-volumes:
-  n8n_data:
