@@ -14,10 +14,7 @@ Clone the repo to your local machine by running the following command:
 git clone git@github.com:bitovi/n8n-getting-started.git
 ```
 
-### Step 2. Create the environment file
-Copy the file `.env-n8n.example` renaming it to `.env-n8n` within the project's root folder.
-
-### Step 3. Start the service
+### Step 2. Start the service
 Start the docker-compose service by running the following command:
 
 ```bash
@@ -39,7 +36,7 @@ https://localhost:5678/
 ```
 
 ### Step 4. Access the service
-Open a browser and navigate to the following URL: https://localhost:5678/
+Open a browser and navigate to the following URL: [https://localhost:5678/](https://localhost:5678/)
 
 
 ## Next Steps
@@ -56,4 +53,19 @@ Where `<Service>` is the name of the service you want to run. For example, to ru
 docker-compose -f docker-compose.yml -f Postgres/docker-compose.yml up
 ```
 
+## Adminer
+Adminer is a database management tool that can be used to manage the databases used by N8N. To access Adminer, navigate to the following URL: [http://localhost:8080/](http://localhost:8080/)
+
+The credentials are pulled directly from the database environment variables. 
+For example, if you are using Postgres, the credentials are:
+
+```bash
+System: Postgres
+Server: pg-n8n
+Username: n8n
+Password: password
+Database: n8n
+```
+
+## Conclusion
 Have fun N8N-ing!
