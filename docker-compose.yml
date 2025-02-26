@@ -5,8 +5,6 @@ services:
     ports:
       - 5678:5678
     restart: always
-    env_file:
-      - .env-n8n
     environment:
       - N8N_LOG_LEVEL=debug
       - N8N_METRICS=true
