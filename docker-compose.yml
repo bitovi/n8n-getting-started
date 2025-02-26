@@ -1,0 +1,10 @@
+version: '3'
+services:
+  n8n:
+    build: .
+    ports:
+      - 5678:5678
+    restart: always
+    environment:
+      - N8N_LOG_LEVEL=debug
+      - N8N_METRICS=true

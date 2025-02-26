@@ -1,0 +1,15 @@
+services:
+  node-exporter:
+    image: prom/node-exporter
+    container_name: node-exporter
+    ports:
+      - 9100:9100
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+  prometheus:
+    command:
+      - '--config.file=/etc/prometheus/node-exporter.yml'
+    volumes:
+      - ./NodeExporter/config/node-exporter.yml:/etc/prometheus/node-exporter.yml
