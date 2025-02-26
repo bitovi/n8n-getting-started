@@ -21,7 +21,7 @@ Copy the file `.env-n8n.example` renaming it to `.env-n8n` within the project's 
 Start the docker-compose service by running the following command:
 
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 
 ### Step 3. Validate the service is running
