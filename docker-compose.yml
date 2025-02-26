@@ -10,5 +10,3 @@ services:
     environment:
       - N8N_LOG_LEVEL=debug
       - N8N_METRICS=true
-    volumes:
-      - .:/home/node

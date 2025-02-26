@@ -2,13 +2,22 @@
 This example shows how to run a local **N8N service** using docker-compose.
 
 ## Prerequisites
+    - [Git](https://github.com/)
+    - [Docker](https://docs.docker.com/engine/install/)
+    - [Docker-Compose](https://docs.docker.com/compose/install/)
 
 ## Instructions
+### Step 1. Clone the repo
+Clone the repo to your local machine by running the following command:
 
-### Step 1. Create the environment file
+```bash
+git clone git@github.com:bitovi/n8n-getting-started.git
+```
+
+### Step 2. Create the environment file
 Copy the file `.env-n8n.example` renaming it to `.env-n8n` within the project's root folder.
 
-### Step 2. Start the service
+### Step 3. Start the service
 Start the docker-compose service by running the following command:
 
 ```bash
@@ -33,15 +42,18 @@ https://localhost:5678/
 Open a browser and navigate to the following URL: https://localhost:5678/
 
 
-
 ## Next Steps
+This repo contains folders with additional docker-compose files for other services that can be run in conjunction with N8N. 
 
-This repo contains folders that demonstrates how to add additional services to the N8N service. The following services are available:
+To use these additional services use the following command:
+```bash
+docker-compose -f docker-compose.yml -f <Service>/docker-compose.yml up
+```
 
-- [N8N with Postgres](./Postgres/README.md)
-- [N8N with Langfuse](./Langfuse/README.md)
-- [N8N with Prometheus](./Prometheus/README.md)
-- [N8N with Grafana](./Grafana/README.md)
-- [N8N with Qdrant](./Qdrant/README.md)
+Where `<Service>` is the name of the service you want to run. For example, to run N8N with Postgres, use the following command:
+
+```bash
+docker-compose -f docker-compose.yml -f Postgres/docker-compose.yml up
+```
 
 Have fun N8N-ing!
