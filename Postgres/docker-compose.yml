@@ -7,12 +7,16 @@ services:
       - DB_POSTGRESDB_PORT=5432
       - DB_POSTGRESDB_USER=n8n
       - DB_POSTGRESDB_PASSWORD=password
-
+    depends_on:
+      - pg-n8n
+      
   pg-n8n:
     image: postgres:12
     restart: always
     environment:
       - POSTGRES_DB=n8n
+      - POSTGRES_USER=n8n
+      - POSTGRES_PASSWORD=password
     volumes:
       - pg_n8n_data:/var/lib/postgresql/data
 volumes:
