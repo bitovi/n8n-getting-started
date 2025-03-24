@@ -18,8 +18,7 @@ services:
 
 configs:
   qdrant_config:
-    content: |
-      log_level: INFO 
+    file: ./Qdrant/config.yaml
 
 volumes:
   qdrant_data:
