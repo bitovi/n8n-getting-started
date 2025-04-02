@@ -36,7 +36,7 @@ https://localhost:5678/
 ```
 
 ### Step 4. Access the service
-Open a browser and navigate to the following URL: [https://localhost:5678/](https://localhost:5678/)
+Open a browser and navigate to the following URL: [http://localhost:5678/](http://localhost:5678/)
 
 
 ## Next Steps
