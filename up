@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -e
+
+# Check if at least one service is provided
+if [ "$#" -lt 1 ]; then
+    echo "Usage: $0 <service1> <service2> ... <serviceN>"
+    exit 1
+fi
+
+# Start with the root docker-compose.yml
+COMPOSE_FILES="-f ./docker-compose.yml"
+
+# Process each service provided as arguments
+for service in "$@"; do
+    echo "Enabling $service"
+
+    # Check if the service directory exists
+    if [ -d "$service" ]; then
+        # Check if docker-compose.yml exists in the service directory
+        if [ -f "$service/docker-compose.yml" ]; then
+            # Add the service's docker-compose.yml to the compose files
+            COMPOSE_FILES="$COMPOSE_FILES -f $service/docker-compose.yml"
+        else
+            echo "Warning: docker-compose.yml not found in $service. Skipping."
+        fi
+    else
+        echo "Warning: Directory for service '$service' does not exist. Skipping."
+    fi
+done
+
+# Combine all docker-compose files into a single command
+echo "Running: docker-compose $COMPOSE_FILES up --build -d --remove-orphans"
+
+# Run docker-compose up with all the compose files
+docker-compose $COMPOSE_FILES up --build -d --remove-orphans
