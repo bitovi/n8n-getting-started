@@ -2,9 +2,10 @@
 This example shows how to run a local **n8n service** using docker-compose.
 
 ## Prerequisites
-    - [Git](https://github.com/)
-    - [Docker](https://docs.docker.com/engine/install/)
-    - [Docker-Compose](https://docs.docker.com/compose/install/)
+
+  - [Git](https://github.com/)
+  - [Docker](https://docs.docker.com/engine/install/)
+  - [Docker-Compose](https://docs.docker.com/compose/install/)
 
 ## Instructions
 ### Step 1. Clone the repo
