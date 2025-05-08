@@ -5,7 +5,21 @@ This example shows how to run a local **n8n service** using docker-compose.
 
   - [Git](https://github.com/)
   - [Docker](https://docs.docker.com/engine/install/)
-  - [Docker-Compose](https://docs.docker.com/compose/install/)
+  - [Docker-Compose](https://docs.docker.com/compose/install/) **Only needed for older versions of Docker**
+
+Uh oh. You have a newer version of Docker (> 4.41) that only supports the newer `docker compose`
+plugin, but all the scripts in this repo depend on `docker-compose` - what to do? There's a solution
+for **MacOS**! Run the following commands to create an executable script that will invoke `docker
+compose` when `docker-compose` is requested.
+
+```sh
+sudo touch /usr/local/bin/docker-compose
+echo 'docker compose --compatibility "$@"' | sudo tee /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+Because Docker's running with "compatibility" you won't have access to some of the nice features
+that `docker compose` supports like automatically showing logs after starting a container.
 
 ## Instructions
 ### Step 1. Clone the repo
@@ -24,21 +38,11 @@ git clone git@github.com:bitovi/n8n-getting-started.git
 ### Step 2. Start the service
 Start the docker-compose service by running the following command:
 
-```sh
-docker compose up --build
-```
-
-Or if you have an older installation of Docker
-
 ```bash
 docker-compose up --build
 ```
 
 ### Step 3. Validate the service is running
-
-> [!TIP]
-> Newer versions of Docker (> 4.41) will automatically show the logs after the build completes; there is no need to run another command.
-
 For older versions of Docker watch the logs to ensure the service is running:
 
 ```bash
