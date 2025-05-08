@@ -11,6 +11,12 @@ This example shows how to run a local **n8n service** using docker-compose.
 ### Step 1. Clone the repo
 Clone the repo to your local machine by running the following command:
 
+```sh
+git clone https://github.com/bitovi/n8n-getting-started.git
+```
+
+Or if you insist on SSH
+
 ```bash
 git clone git@github.com:bitovi/n8n-getting-started.git
 ```
