@@ -24,12 +24,22 @@ git clone git@github.com:bitovi/n8n-getting-started.git
 ### Step 2. Start the service
 Start the docker-compose service by running the following command:
 
+```sh
+docker compose up --build
+```
+
+Or if you have an older installation of Docker
+
 ```bash
 docker-compose up --build
 ```
 
 ### Step 3. Validate the service is running
-Watch the logs to ensure the service is running:
+
+> [!TIP]
+> Newer versions of Docker (> 4.41) will automatically show the logs after the build completes; there is no need to run another command.
+
+For older versions of Docker watch the logs to ensure the service is running:
 
 ```bash
 docker-compose logs -f
