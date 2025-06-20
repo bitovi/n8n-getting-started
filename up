@@ -30,7 +30,7 @@ for service in "$@"; do
 done
 
 # Combine all docker-compose files into a single command
-echo "Running: docker-compose $COMPOSE_FILES up --build -d --remove-orphans"
+echo "Running: docker-compose $COMPOSE_FILES up --build -d --remove-orphans --verbose"
 
 # Run docker-compose up with all the compose files
 docker-compose $COMPOSE_FILES up --build -d --remove-orphans

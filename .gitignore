@@ -3,6 +3,9 @@
 *.env-n8n
 *.env-pg-langfuse
 *.env-pg-n8n
+*.env-clickhouse
+*.env-redis
+*.env-minio
 
 # MacOS
 .DS_Store
