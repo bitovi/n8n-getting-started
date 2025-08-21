@@ -1,4 +1,4 @@
-# n8n-Getting-Started: n8n
+# Getting Started with n8n
 
 This example shows how to run a local **n8n service** using docker-compose.
 
