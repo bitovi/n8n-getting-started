@@ -1,4 +1,4 @@
-FROM bitovi/n8n-nodes-custom:latest
+FROM bitovi/n8n-community-nodes:latest
 
 USER root
 
