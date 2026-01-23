@@ -9,9 +9,9 @@ services:
       - DB_POSTGRESDB_PASSWORD=password
     depends_on:
       - pg-n8n
-      
+
   pg-n8n:
-    image: postgres:12
+    image: pgautoupgrade/pgautoupgrade:latest
     restart: always
     environment:
       - POSTGRES_DB=n8n
